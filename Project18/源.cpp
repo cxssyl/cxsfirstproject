@@ -1,3 +1,4 @@
+//³ÂĞñÉıºÃË§
 #include<iostream>
 #include<cstring>
 #include<cstdio>
