@@ -1,12 +1,12 @@
-//³ÂĞñÉıºÃË§
+//é™ˆæ—­å‡å¥½å¸…
 #include<iostream>
 #include<cstring>
 #include<cstdio>
 #include<vector>
 #include<cstdlib> 
-#define N 7//Í¹¶à±ßĞÎ±ßÊı+1
+#define N 7//å‡¸å¤šè¾¹å½¢è¾¹æ•°+1
 #define maxn 100
-//int w[][N] = { { 0,2,2,3,1,4 },{ 2,0,1,5,2,3 },{ 2,1,0,2,1,4 },{ 3,5,2,0,6,2 },{ 1,2,1,6,0,1 },{ 4,3,4,2,1,0 } };//Í¹¶à±ßĞÎµÄÈ¨  
+//int w[][N] = { { 0,2,2,3,1,4 },{ 2,0,1,5,2,3 },{ 2,1,0,2,1,4 },{ 3,5,2,0,6,2 },{ 1,2,1,6,0,1 },{ 4,3,4,2,1,0 } };//å‡¸å¤šè¾¹å½¢çš„æƒ  
 using namespace std;
 int MinweightTriangulation(int n, int(*t)[maxn], int(*s)[maxn],int (*w)[maxn]);
 void trace_back(int i, int j, int(*s)[maxn]);
@@ -15,7 +15,7 @@ int main()
 {
 	int s[maxn][maxn], t[maxn][maxn],w[maxn][maxn];
 	int n;
-	cout<<"ÇëÊäÈë¶¥µãµÄ¸öÊı£º";
+	cout<<"è¯·è¾“å…¥é¡¶ç‚¹çš„ä¸ªæ•°ï¼š";
 	cin>>n;
 	for(int i=0;i<n;i++)
 	{
@@ -28,8 +28,8 @@ int main()
 			}
 		} 
 	}
-	cout << "¶à±ßĞÎµÄ×îÓÅÈı½ÇÆÊ·ÖÎª:" << MinweightTriangulation(N - 1, t, s,w) << endl;
-	cout << "×îÓĞÈı½Ç½á¹¹Îª£º" << endl;
+	cout << "å¤šè¾¹å½¢çš„æœ€ä¼˜ä¸‰è§’å‰–åˆ†ä¸º:" << MinweightTriangulation(N - 1, t, s,w) << endl;
+	cout << "æœ€æœ‰ä¸‰è§’ç»“æ„ä¸ºï¼š" << endl;
 	trace_back(1, 5, s);
 	return 0;
 }
@@ -64,9 +64,10 @@ void trace_back(int i, int j, int(*s)[N])
 	if (i == j)  return;
 	trace_back(i, s[i][j], s);
 	trace_back(s[i][j] + 1, j, s);
-	cout << "Èı½ÇÆÊ·Ö¶¥µã£ºV" << i - 1 << ",V" << j << ",V" << s[i][j] << endl;
+	cout << "ä¸‰è§’å‰–åˆ†é¡¶ç‚¹ï¼šV" << i - 1 << ",V" << j << ",V" << s[i][j] << endl;
 }
 int Weight(int a, int b, int c,int (*w)[maxn])
 {
 	return w[a][b] + w[b][c] + w[a][c];
+	cout<<"å‚»é€¼"<<endl;
 }
